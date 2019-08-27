@@ -8,8 +8,8 @@ class Players extends Component {
         axios({
             method: 'get',
             url: 'https://api.mysportsfeeds.com/v1.2/pull/nfl/2018-regular/player_gamelogs.json?player=russell-wilson',
-            // params: {"fordate": "20180909"},
-            headers: {"Authorization": "Basic " + btoa('cecfb47c-28cb-46b0-bfae-be7dc7' + ":" + 'codingdojo')}
+            params: {"fordate": "20180909"},
+            headers: {"Authorization": "Basic " + btoa(`${process.env.REACT_APP_API_KEY}:${process.env.REACT_APP_API_PASS}`)}
         })
         .then(res=>{
             console.log(res.data);
